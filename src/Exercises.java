@@ -23,22 +23,25 @@ public class Exercises {
         return count;
     }
 
-    // /**
-    //  * Adds a new value to the front of the list and returns the new head.
-    //  * 
-    //  * Example:
-    //  * head: 7 -> 6 -> 0
-    //  * toAdd: 4
-    //  * 
-    //  * Output: 4 -> 7 -> 6 -> 0
-    //  * 
-    //  * @param head the head of the linked list
-    //  * @param toAdd the value to add to the front
-    //  * @return the new head of the linked list
-    //  */
-    // public static ListNode prepend(ListNode head, int toAdd) {
-    //     return null;
-    // }
+    /**
+     * Adds a new value to the front of the list and returns the new head.
+     * 
+     * Example:
+     * head: 7 -> 6 -> 0
+     * toAdd: 4
+     * 
+     * Output: 4 -> 7 -> 6 -> 0
+     * 
+     * @param head the head of the linked list
+     * @param toAdd the value to add to the front
+     * @return the new head of the linked list
+     */
+    public static ListNode prepend(ListNode head, int toAdd) {
+        ListNode toBeAdded = new ListNode(toAdd);
+        curr.next = head; 
+        
+        return toBeAdded;
+    }
 
     // /**
     //  * Removes the last element in the linked list and returns the head.
