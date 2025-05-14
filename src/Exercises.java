@@ -18,7 +18,7 @@ public class Exercises {
 
         int count = 0;
 
-        ListNode current = head.next;
+        ListNode current = head;
 
         while ( current != null ){
             count++;
@@ -65,17 +65,17 @@ public class Exercises {
      * @return the head of the list with the last element removed
      */
     public static ListNode removeLast(ListNode head) {
-        if (head == null){
+        if (head == null || head.next == null){
             return null;
         }
 
         ListNode current = head;
 
-        while (current.next != null){
+        while (current.next.next != null){
             current = current.next;
         }
 
-        current = null;
+        current.next = null;
         return head;
     }
 
@@ -126,7 +126,28 @@ public class Exercises {
      * @return the head of the list with the first instance of the minimum value removed
      */
     public static ListNode removeMin(ListNode head) {
-        return null;
+        if (head == null || head.next == null){
+            return null;
+        }
+
+        int min = min(head);
+
+        ListNode current = head;
+
+        if (current.data == min){
+            //current = current.next;
+            return head = current.next;
+        }
+
+        while (current.next != null){
+            if (current.next.data == min){
+                current.next = current.next.next;
+            }
+
+            current = current.next;
+        }
+
+        return head;
     }
 
     /* ------ OPTIONAL CHALLENGE PROBLEMS ------ */
@@ -152,7 +173,35 @@ public class Exercises {
      * @return whether the values in bigList are twice the values in smallList
      */
     public static boolean isDoubled(ListNode smallList, ListNode bigList) {
-        return false;
+        if (smallList == null && bigList == null){
+            return true;
+        }
+        if (smallList == null || bigList == null){
+            return false;
+        }
+        
+        
+        if (bigList.data != smallList.data *2){
+            return false;
+        }
+
+        ListNode smallCurr = smallList;
+        ListNode bigCurr = bigList;
+
+        while (smallCurr != null && bigCurr != null){
+            if (bigCurr.data != smallCurr.data*2){
+                return false;
+            }
+
+            smallCurr = smallCurr.next;
+            bigCurr = bigCurr.next;   
+        }
+
+        if ((smallCurr == null && bigCurr != null) || (smallCurr != null && bigCurr == null)){
+            return false;
+        }
+
+        return true;
     }
 
     /**
