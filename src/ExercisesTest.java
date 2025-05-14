@@ -33,24 +33,24 @@ public class ExercisesTest {
 
     // // ------ prepend() tests ------
 
-    // @Test
-    // public void testPrependOnNull() {
-    //     ListNode result = Exercises.prepend(null, 7);
-    //     String expected = "7";
-    //     String actual = listToString(result);
-    //     assertEquals(expected, actual,
-    //         "prepend on null should produce \"" + expected + "\" but got \"" + actual + "\"");
-    // }
+    @Test
+    public void testPrependOnNull() {
+        ListNode result = Exercises.prepend(null, 7);
+        String expected = "7";
+        String actual = listToString(result);
+        assertEquals(expected, actual,
+            "prepend on null should produce \"" + expected + "\" but got \"" + actual + "\"");
+    }
 
-    // @Test
-    // public void testPrependOnNonNull() {
-    //     ListNode head = buildList(7, 6, 0);
-    //     ListNode result = Exercises.prepend(head, 4);
-    //     String expected = "4 -> 7 -> 6 -> 0";
-    //     String actual = listToString(result);
-    //     assertEquals(expected, actual,
-    //         "prepend failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    // }
+    @Test
+    public void testPrependOnNonNull() {
+        ListNode head = buildList(7, 6, 0);
+        ListNode result = Exercises.prepend(head, 4);
+        String expected = "4 -> 7 -> 6 -> 0";
+        String actual = listToString(result);
+        assertEquals(expected, actual,
+            "prepend failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    }
 
     // // ------ removeLast() tests ------
 
