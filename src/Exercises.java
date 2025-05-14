@@ -1,4 +1,5 @@
 public class Exercises {
+  
     /**
      * Returns a count of how many nodes are in the linked list.
      * 
@@ -11,8 +12,18 @@ public class Exercises {
      * @param head the head of the linked list
      * @return the length of the list
      */
+
+     
     public static int length(ListNode head) {
-        return -1;
+
+        int count = 0;
+        ListNode current = head;
+
+        while (current != null) { 
+            count++;
+            current =current.next;
+        }
+        return count;
     }
 
     /**
@@ -29,7 +40,9 @@ public class Exercises {
      * @return the new head of the linked list
      */
     public static ListNode prepend(ListNode head, int toAdd) {
-        return null;
+        ListNode newHead = new ListNode(toAdd) ;
+        newHead.next = head;
+        return newHead;
     }
 
     /**
@@ -45,7 +58,18 @@ public class Exercises {
      * @return the head of the list with the last element removed
      */
     public static ListNode removeLast(ListNode head) {
-        return null;
+        if (head == null || head.next == null) return null;
+        ListNode current = head;
+
+        while(current != null ){
+            
+            if(current.next.next == null){
+                
+                current.next = null;
+            }
+            current = current.next;
+        }
+        return head;
     }
 
     /**
