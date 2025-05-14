@@ -219,6 +219,25 @@ public class Exercises {
      * @return the head of the new list after k rotations to the left
      */
     public static ListNode rotateLeft(ListNode head, int k) {
-        return null;
+        if (head == null){
+            return null;
+        } else if (head.next == null){
+            return head;
+        }
+
+        ListNode current = head;
+
+        for (int i = 0; i < k; i++){
+            int headData = current.data;
+
+            current = current.next;
+
+            while (current.next != null){
+                current = current.next;
+            }
+
+            current.next = new ListNode(headData);
+        }
+        return head;
     }
 }
