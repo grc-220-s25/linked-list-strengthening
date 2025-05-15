@@ -119,7 +119,24 @@ public class Exercises {
      *         removed
      */
     public static ListNode removeMin(ListNode head) {
-        return null;
+        if (head == null || head.next == null) {
+            return null;
+        }
+
+        int min = min(head);
+        if (head.data == min) {
+            return head.next;
+        }
+
+        ListNode current = head;
+        while (current.next != null) {
+            if (current.next.data == min) {
+                current.next = current.next.next;
+                return head;
+            }
+            current = current.next;
+        }
+        return head;
     }
 
     /* ------ OPTIONAL CHALLENGE PROBLEMS ------ */
