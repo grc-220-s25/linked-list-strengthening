@@ -167,39 +167,39 @@ public class ExercisesTest {
             "removeMin with duplicates: expected \"" + expected + "\" but got \"" + actual + "\"");
     }
 
-    // // ------ isDoubled() tests ------
+    // ------ isDoubled() tests ------
 
-    // @Test
-    // public void testIsDoubledBothNull() {
-    //     assertTrue(Exercises.isDoubled(null, null),
-    //         "isDoubled(null, null) should return true");
-    // }
+    @Test
+    public void testIsDoubledBothNull() {
+        assertTrue(Exercises.isDoubled(null, null),
+            "isDoubled(null, null) should return true");
+    }
 
-    // @Test
-    // public void testIsDoubledOneNull() {
-    //     assertFalse(Exercises.isDoubled(buildList(1, 2), null),
-    //         "isDoubled(non-null, null) should return false");
-    //     assertFalse(Exercises.isDoubled(null, buildList(2, 4)),
-    //         "isDoubled(null, non-null) should return false");
-    // }
+    @Test
+    public void testIsDoubledOneNull() {
+        assertFalse(Exercises.isDoubled(buildList(1, 2), null),
+            "isDoubled(non-null, null) should return false");
+        assertFalse(Exercises.isDoubled(null, buildList(2, 4)),
+            "isDoubled(null, non-null) should return false");
+    }
 
-    // @Test
-    // public void testIsDoubledMatchingAndMismatched() {
-    //     ListNode small = buildList(4, 3, 9);
-    //     ListNode bigGood = buildList(8, 6, 18);
-    //     assertTrue(Exercises.isDoubled(small, bigGood),
-    //         "isDoubled(" + listToString(small) + ", " + listToString(bigGood) + ") should be true");
+    @Test
+    public void testIsDoubledMatchingAndMismatched() {
+        ListNode small = buildList(4, 3, 9);
+        ListNode bigGood = buildList(8, 6, 18);
+        assertTrue(Exercises.isDoubled(small, bigGood),
+            "isDoubled(" + listToString(small) + ", " + listToString(bigGood) + ") should be true");
 
-    //     ListNode bigBad = buildList(8, 6, 7);
-    //     assertFalse(Exercises.isDoubled(small, bigBad),
-    //         "isDoubled with wrong value should return false");
-    // }
+        ListNode bigBad = buildList(8, 6, 7);
+        assertFalse(Exercises.isDoubled(small, bigBad),
+            "isDoubled with wrong value should return false");
+    }
 
-    // @Test
-    // public void testIsDoubledLengthMismatch() {
-    //     assertFalse(Exercises.isDoubled(buildList(1,2,3), buildList(2,4)),
-    //         "isDoubled with different lengths should return false");
-    // }
+    @Test
+    public void testIsDoubledLengthMismatch() {
+        assertFalse(Exercises.isDoubled(buildList(1,2,3), buildList(2,4)),
+            "isDoubled with different lengths should return false");
+    }
 
     // // ------ rotateLeft() tests ------
 
