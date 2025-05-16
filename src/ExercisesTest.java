@@ -121,51 +121,51 @@ public class ExercisesTest {
             "min of " + listToString(tailMin) + " should be -2");
     }
 
-    // // ------ removeMin() tests ------
+    // ------ removeMin() tests ------
 
-    // @Test
-    // public void testRemoveMinOnNull() {
-    //     assertNull(Exercises.removeMin(null),
-    //         "removeMin(null) should return null");
-    // }
+    @Test
+    public void testRemoveMinOnNull() {
+        assertNull(Exercises.removeMin(null),
+            "removeMin(null) should return null");
+    }
 
-    // @Test
-    // public void testRemoveMinOnSingle() {
-    //     ListNode head = buildList(7);
-    //     ListNode result = Exercises.removeMin(head);
-    //     assertNull(result,
-    //         "removeMin on single-element list should return null");
-    // }
+    @Test
+    public void testRemoveMinOnSingle() {
+        ListNode head = buildList(7);
+        ListNode result = Exercises.removeMin(head);
+        assertNull(result,
+            "removeMin on single-element list should return null");
+    }
 
-    // @Test
-    // public void testRemoveMinExampleMiddle() {
-    //     ListNode head = buildList(3, 9, 0, -1, 5);
-    //     ListNode result = Exercises.removeMin(head);
-    //     String expected = "3 -> 9 -> 0 -> 5";
-    //     String actual = listToString(result);
-    //     assertEquals(expected, actual,
-    //         "removeMin failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    // }
+    @Test
+    public void testRemoveMinExampleMiddle() {
+        ListNode head = buildList(3, 9, 0, -1, 5);
+        ListNode result = Exercises.removeMin(head);
+        String expected = "3 -> 9 -> 0 -> 5";
+        String actual = listToString(result);
+        assertEquals(expected, actual,
+            "removeMin failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    }
 
-    // @Test
-    // public void testRemoveMinAtHead() {
-    //     ListNode head = buildList(1, 4, 2);
-    //     ListNode result = Exercises.removeMin(head);
-    //     String expected = "4 -> 2";
-    //     String actual = listToString(result);
-    //     assertEquals(expected, actual,
-    //         "removeMin when min is head: expected \"" + expected + "\" but got \"" + actual + "\"");
-    // }
+    @Test
+    public void testRemoveMinAtHead() {
+        ListNode head = buildList(1, 4, 2);
+        ListNode result = Exercises.removeMin(head);
+        String expected = "4 -> 2";
+        String actual = listToString(result);
+        assertEquals(expected, actual,
+            "removeMin when min is head: expected \"" + expected + "\" but got \"" + actual + "\"");
+    }
 
-    // @Test
-    // public void testRemoveMinAtTailAndDuplicates() {
-    //     ListNode head = buildList(2, 4, 2, 9);
-    //     ListNode result = Exercises.removeMin(head);
-    //     String expected = "4 -> 2 -> 9";
-    //     String actual = listToString(result);
-    //     assertEquals(expected, actual,
-    //         "removeMin with duplicates: expected \"" + expected + "\" but got \"" + actual + "\"");
-    // }
+    @Test
+    public void testRemoveMinAtTailAndDuplicates() {
+        ListNode head = buildList(2, 4, 2, 9);
+        ListNode result = Exercises.removeMin(head);
+        String expected = "4 -> 2 -> 9";
+        String actual = listToString(result);
+        assertEquals(expected, actual,
+            "removeMin with duplicates: expected \"" + expected + "\" but got \"" + actual + "\"");
+    }
 
     // // ------ isDoubled() tests ------
 
