@@ -88,38 +88,38 @@ public class ExercisesTest {
             "removeLast on [1 -> 2] should produce \"" + expected + "\" but got \"" + actual + "\"");
     }
 
-    // // ------ min() tests ------
+    // ------ min() tests ------
 
-    // @Test
-    // public void testMinOnNull() {
-    //     assertEquals(Integer.MAX_VALUE, Exercises.min(null),
-    //         "min(null) should be Integer.MAX_VALUE");
-    // }
+    @Test
+    public void testMinOnNull() {
+        assertEquals(Integer.MAX_VALUE, Exercises.min(null),
+            "min(null) should be Integer.MAX_VALUE");
+    }
 
-    // @Test
-    // public void testMinOnSingle() {
-    //     ListNode head = buildList(42);
-    //     assertEquals(42, Exercises.min(head),
-    //         "min of " + listToString(head) + " should be 42");
-    // }
+    @Test
+    public void testMinOnSingle() {
+        ListNode head = buildList(42);
+        assertEquals(42, Exercises.min(head),
+            "min of " + listToString(head) + " should be 42");
+    }
 
-    // @Test
-    // public void testMinExample() {
-    //     ListNode example = buildList(3, -4, 9, 2);
-    //     assertEquals(-4, Exercises.min(example),
-    //         "min of " + listToString(example) + " should be -4");
-    // }
+    @Test
+    public void testMinExample() {
+        ListNode example = buildList(3, -4, 9, 2);
+        assertEquals(-4, Exercises.min(example),
+            "min of " + listToString(example) + " should be -4");
+    }
 
-    // @Test
-    // public void testMinAtHeadAndTail() {
-    //     ListNode headMin = buildList(-5, 10, 7);
-    //     assertEquals(-5, Exercises.min(headMin),
-    //         "min of " + listToString(headMin) + " should be -5");
+    @Test
+    public void testMinAtHeadAndTail() {
+        ListNode headMin = buildList(-5, 10, 7);
+        assertEquals(-5, Exercises.min(headMin),
+            "min of " + listToString(headMin) + " should be -5");
 
-    //     ListNode tailMin = buildList(8, 1, -2);
-    //     assertEquals(-2, Exercises.min(tailMin),
-    //         "min of " + listToString(tailMin) + " should be -2");
-    // }
+        ListNode tailMin = buildList(8, 1, -2);
+        assertEquals(-2, Exercises.min(tailMin),
+            "min of " + listToString(tailMin) + " should be -2");
+    }
 
     // // ------ removeMin() tests ------
 
