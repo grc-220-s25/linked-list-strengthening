@@ -54,39 +54,39 @@ public class ExercisesTest {
 
     // // ------ removeLast() tests ------
 
-    // @Test
-    // public void testRemoveLastOnNull() {
-    //     assertNull(Exercises.removeLast(null),
-    //         "removeLast(null) should return null");
-    // }
+    @Test
+    public void testRemoveLastOnNull() {
+        assertNull(Exercises.removeLast(null),
+            "removeLast(null) should return null");
+    }
 
-    // @Test
-    // public void testRemoveLastOnSingle() {
-    //     ListNode head = buildList(5);
-    //     ListNode result = Exercises.removeLast(head);
-    //     assertNull(result,
-    //         "removeLast on single-element list should return null");
-    // }
+    @Test
+    public void testRemoveLastOnSingle() {
+        ListNode head = buildList(5);
+        ListNode result = Exercises.removeLast(head);
+        assertNull(result,
+            "removeLast on single-element list should return null");
+    }
 
-    // @Test
-    // public void testRemoveLastExample() {
-    //     ListNode head = buildList(6, 4, 9, 2);
-    //     ListNode result = Exercises.removeLast(head);
-    //     String expected = "6 -> 4 -> 9";
-    //     String actual = listToString(result);
-    //     assertEquals(expected, actual,
-    //         "removeLast failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    // }
+    @Test
+    public void testRemoveLastExample() {
+        ListNode head = buildList(6, 4, 9, 2);
+        ListNode result = Exercises.removeLast(head);
+        String expected = "6 -> 4 -> 9";
+        String actual = listToString(result);
+        assertEquals(expected, actual,
+            "removeLast failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    }
 
-    // @Test
-    // public void testRemoveLastTwoElements() {
-    //     ListNode head = buildList(1, 2);
-    //     ListNode result = Exercises.removeLast(head);
-    //     String expected = "1";
-    //     String actual = listToString(result);
-    //     assertEquals(expected, actual,
-    //         "removeLast on [1 -> 2] should produce \"" + expected + "\" but got \"" + actual + "\"");
-    // }
+    @Test
+    public void testRemoveLastTwoElements() {
+        ListNode head = buildList(1, 2);
+        ListNode result = Exercises.removeLast(head);
+        String expected = "1";
+        String actual = listToString(result);
+        assertEquals(expected, actual,
+            "removeLast on [1 -> 2] should produce \"" + expected + "\" but got \"" + actual + "\"");
+    }
 
     // // ------ min() tests ------
 
