@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Exercises {
     /**
      * Returns a count of how many nodes are in the linked list.
@@ -12,7 +14,20 @@ public class Exercises {
      * @return the length of the list
      */
     public static int length(ListNode head) {
-        return -1;
+
+        if (head == null){
+            return 0;
+        }
+
+        int count = 0;
+        ListNode current = head;
+        
+        while (current != null){
+            count++;
+            current = current.next;
+
+        }
+        return count;
     }
 
     /**
@@ -29,7 +44,11 @@ public class Exercises {
      * @return the new head of the linked list
      */
     public static ListNode prepend(ListNode head, int toAdd) {
-        return null;
+
+        ListNode toBeAdded = new ListNode(toAdd);
+        
+        toBeAdded.next = head;
+        return toBeAdded;
     }
 
     /**
@@ -45,7 +64,18 @@ public class Exercises {
      * @return the head of the list with the last element removed
      */
     public static ListNode removeLast(ListNode head) {
-        return null;
+
+        if (head == null || head.next == null){
+            return null;
+        }
+        ListNode current = head;
+
+        while (current.next.next != null){
+            current = current.next;
+        }
+        current.next = null;
+
+        return head;
     }
 
     /**
@@ -60,7 +90,20 @@ public class Exercises {
      * @return the minimum value in the list 
      */
     public static int min(ListNode head) {
-        return -1;
+        if (head == null){
+            return Integer.MAX_VALUE;
+        }
+        
+        int min = head.data;
+        ListNode current = head.next;
+        
+        while (current != null){
+            if (current.data < min){
+                min = current.data;
+            }
+            current = current.next;
+        }
+        return min;
     }
 
     /**
@@ -81,7 +124,31 @@ public class Exercises {
      * @return the head of the list with the first instance of the minimum value removed
      */
     public static ListNode removeMin(ListNode head) {
-        return null;
+
+        if (head == null || head.next == null){
+            return null;
+        }
+
+        int min = min(head);
+
+        if (head.data == min){
+            return head.next;
+        }
+
+        
+
+        ListNode current = head;
+
+        while(current.next != null){
+            if (current.next.data == min){
+                current.next = current.next.next;
+                break;
+            }
+            current = current.next;
+        }
+
+
+        return head;
     }
 
     /* ------ OPTIONAL CHALLENGE PROBLEMS ------ */
@@ -107,7 +174,27 @@ public class Exercises {
      * @return whether the values in bigList are twice the values in smallList
      */
     public static boolean isDoubled(ListNode smallList, ListNode bigList) {
-        return false;
+
+        if (smallList == null && bigList == null){
+            return true;
+        } else if (smallList == null || bigList == null){
+            return false;
+        }
+
+        ListNode left = smallList;
+        ListNode right = bigList;
+        
+        while (left != null && right != null){
+            if (right.data != left.data * 2){
+                return false;
+            }
+
+            left = left.next;
+            right = right.next;
+
+        }
+
+        return left == null && right == null;
     }
 
     /**

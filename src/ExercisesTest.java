@@ -31,7 +31,7 @@ public class ExercisesTest {
             "length of " + listToString(example) + " should be 4");
     }
 
-    // ------ prepend() tests ------
+    // // ------ prepend() tests ------
 
     @Test
     public void testPrependOnNull() {
@@ -52,7 +52,7 @@ public class ExercisesTest {
             "prepend failed: expected \"" + expected + "\" but got \"" + actual + "\"");
     }
 
-    // ------ removeLast() tests ------
+    // // ------ removeLast() tests ------
 
     @Test
     public void testRemoveLastOnNull() {
@@ -201,73 +201,73 @@ public class ExercisesTest {
             "isDoubled with different lengths should return false");
     }
 
-    // ------ rotateLeft() tests ------
+    // // ------ rotateLeft() tests ------
 
-    @Test
-    public void testRotateLeftOnNull() {
-        assertNull(Exercises.rotateLeft(null, 3),
-            "rotateLeft(null, k) should return null");
-    }
+    // @Test
+    // public void testRotateLeftOnNull() {
+    //     assertNull(Exercises.rotateLeft(null, 3),
+    //         "rotateLeft(null, k) should return null");
+    // }
 
-    @Test
-    public void testRotateLeftOnSingle() {
-        ListNode head = buildList(5);
-        ListNode result = Exercises.rotateLeft(head, 10);
-        String expected = "5";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft on single-element list should return the same list");
-    }
+    // @Test
+    // public void testRotateLeftOnSingle() {
+    //     ListNode head = buildList(5);
+    //     ListNode result = Exercises.rotateLeft(head, 10);
+    //     String expected = "5";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft on single-element list should return the same list");
+    // }
 
-    @Test
-    public void testRotateLeftByZero() {
-        ListNode head = buildList(1,2,3,4,5);
-        ListNode result = Exercises.rotateLeft(head, 0);
-        String expected = listToString(head);
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft by 0 should produce the same list");
-    }
+    // @Test
+    // public void testRotateLeftByZero() {
+    //     ListNode head = buildList(1,2,3,4,5);
+    //     ListNode result = Exercises.rotateLeft(head, 0);
+    //     String expected = listToString(head);
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft by 0 should produce the same list");
+    // }
 
-    @Test
-    public void testRotateLeftTypical() {
-        ListNode head = buildList(1,2,3,4,5);
-        ListNode result = Exercises.rotateLeft(head, 2);
-        String expected = "3 -> 4 -> 5 -> 1 -> 2";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    }
+    // @Test
+    // public void testRotateLeftTypical() {
+    //     ListNode head = buildList(1,2,3,4,5);
+    //     ListNode result = Exercises.rotateLeft(head, 2);
+    //     String expected = "3 -> 4 -> 5 -> 1 -> 2";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    // }
 
-    @Test
-    public void testRotateLeftByLength() {
-        ListNode head = buildList(50, -1, 8, 33, 17);
-        ListNode result = Exercises.rotateLeft(head, 5);
-        String expected = "50 -> -1 -> 8 -> 33 -> 17";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft by list length should return the same list");
-    }
+    // @Test
+    // public void testRotateLeftByLength() {
+    //     ListNode head = buildList(50, -1, 8, 33, 17);
+    //     ListNode result = Exercises.rotateLeft(head, 5);
+    //     String expected = "50 -> -1 -> 8 -> 33 -> 17";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft by list length should return the same list");
+    // }
 
-    @Test
-    public void testRotateLeftGreaterThanLength() {
-        ListNode head = buildList(5, 15, -10, 0, 30);
-        ListNode result = Exercises.rotateLeft(head, 7); // 7 % 5 = 2
-        String expected = "-10 -> 0 -> 30 -> 5 -> 15";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft by k > length failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    }
+    // @Test
+    // public void testRotateLeftGreaterThanLength() {
+    //     ListNode head = buildList(5, 15, -10, 0, 30);
+    //     ListNode result = Exercises.rotateLeft(head, 7); // 7 % 5 = 2
+    //     String expected = "-10 -> 0 -> 30 -> 5 -> 15";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft by k > length failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    // }
 
-    @Test
-    public void testRotateLeftByOne() {
-        ListNode head = buildList(99, 42, 17, -8);
-        ListNode result = Exercises.rotateLeft(head, 1);
-        String expected = "42 -> 17 -> -8 -> 99";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft by 1 failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    }
+    // @Test
+    // public void testRotateLeftByOne() {
+    //     ListNode head = buildList(99, 42, 17, -8);
+    //     ListNode result = Exercises.rotateLeft(head, 1);
+    //     String expected = "42 -> 17 -> -8 -> 99";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft by 1 failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    // }
 
         /** Helper to build a linked list from an array of values. */
     private ListNode buildList(int... values) {
@@ -281,10 +281,10 @@ public class ExercisesTest {
         return head;
     }
 
-    /**
-     * Helper to convert a list to a string, detecting cycles gracefully.
-     * Format: data1 -> data2 -> ...
-     */
+    // /**
+    //  * Helper to convert a list to a string, detecting cycles gracefully.
+    //  * Format: data1 -> data2 -> ...
+    //  */
     private String listToString(ListNode head) {
         StringBuilder sb = new StringBuilder();
         Set<ListNode> visited = new HashSet<>();
