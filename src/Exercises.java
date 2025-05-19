@@ -12,7 +12,14 @@ public class Exercises {
      * @return the length of the list
      */
     public static int length(ListNode head) {
-        return -1;
+        if (head == null) {
+            return 0;
+        }
+        int count = 0;
+        while  (head != null) {
+            count++; head = head.next;
+        }
+        return count;
     }
 
     /**
@@ -29,7 +36,9 @@ public class Exercises {
      * @return the new head of the linked list
      */
     public static ListNode prepend(ListNode head, int toAdd) {
-        return null;
+        ListNode newH = new ListNode(toAdd);
+        newH.next = head;
+        return newH;
     }
 
     /**
@@ -45,7 +54,15 @@ public class Exercises {
      * @return the head of the list with the last element removed
      */
     public static ListNode removeLast(ListNode head) {
+        if (head == null || head.next == null) {
         return null;
+    }
+        ListNode current = head;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        current.next = null;
+        return head;
     }
 
     /**
@@ -60,7 +77,19 @@ public class Exercises {
      * @return the minimum value in the list 
      */
     public static int min(ListNode head) {
-        return -1;
+        if (head == null) {
+            return Integer.MAX_VALUE; //returns the value at max
+        }
+        ListNode current = head;
+        int min = current.data;
+
+        while (current != null) {
+            if (current.data < min) {
+                min = current.data;
+            }
+            current = current.next;
+        }
+        return min;
     }
 
     /**
@@ -81,7 +110,22 @@ public class Exercises {
      * @return the head of the list with the first instance of the minimum value removed
      */
     public static ListNode removeMin(ListNode head) {
-        return null;
+        if (head == null || head.next == null) {
+            return null;
+        }
+        int min = min(head);
+            if (head.data == min) {
+                return head.next;
+            }
+            ListNode current = head;
+            while (current.next != null) {
+                if (current.next.data == min) {
+                    current.next = current.next.next;
+                    return head;
+                }
+                current = current.next;
+            }
+            return head;
     }
 
     /* ------ OPTIONAL CHALLENGE PROBLEMS ------ */
