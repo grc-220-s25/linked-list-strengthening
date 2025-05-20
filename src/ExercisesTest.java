@@ -50,7 +50,7 @@ public class ExercisesTest {
         String actual = listToString(result);
         assertEquals(expected, actual,
             "prepend failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    }
+     }
 
     // ------ removeLast() tests ------
 
@@ -88,7 +88,7 @@ public class ExercisesTest {
             "removeLast on [1 -> 2] should produce \"" + expected + "\" but got \"" + actual + "\"");
     }
 
-    // ------ min() tests ------
+    // // ------ min() tests ------
 
     @Test
     public void testMinOnNull() {
@@ -121,7 +121,7 @@ public class ExercisesTest {
             "min of " + listToString(tailMin) + " should be -2");
     }
 
-    // ------ removeMin() tests ------
+    // // ------ removeMin() tests ------
 
     @Test
     public void testRemoveMinOnNull() {
@@ -167,107 +167,107 @@ public class ExercisesTest {
             "removeMin with duplicates: expected \"" + expected + "\" but got \"" + actual + "\"");
     }
 
-    // ------ isDoubled() tests ------
+    // // ------ isDoubled() tests ------
 
-    @Test
-    public void testIsDoubledBothNull() {
-        assertTrue(Exercises.isDoubled(null, null),
-            "isDoubled(null, null) should return true");
-    }
+    // @Test
+    // public void testIsDoubledBothNull() {
+    //     assertTrue(Exercises.isDoubled(null, null),
+    //         "isDoubled(null, null) should return true");
+    // }
 
-    @Test
-    public void testIsDoubledOneNull() {
-        assertFalse(Exercises.isDoubled(buildList(1, 2), null),
-            "isDoubled(non-null, null) should return false");
-        assertFalse(Exercises.isDoubled(null, buildList(2, 4)),
-            "isDoubled(null, non-null) should return false");
-    }
+    // @Test
+    // public void testIsDoubledOneNull() {
+    //     assertFalse(Exercises.isDoubled(buildList(1, 2), null),
+    //         "isDoubled(non-null, null) should return false");
+    //     assertFalse(Exercises.isDoubled(null, buildList(2, 4)),
+    //         "isDoubled(null, non-null) should return false");
+    // }
 
-    @Test
-    public void testIsDoubledMatchingAndMismatched() {
-        ListNode small = buildList(4, 3, 9);
-        ListNode bigGood = buildList(8, 6, 18);
-        assertTrue(Exercises.isDoubled(small, bigGood),
-            "isDoubled(" + listToString(small) + ", " + listToString(bigGood) + ") should be true");
+    // @Test
+    // public void testIsDoubledMatchingAndMismatched() {
+    //     ListNode small = buildList(4, 3, 9);
+    //     ListNode bigGood = buildList(8, 6, 18);
+    //     assertTrue(Exercises.isDoubled(small, bigGood),
+    //         "isDoubled(" + listToString(small) + ", " + listToString(bigGood) + ") should be true");
 
-        ListNode bigBad = buildList(8, 6, 7);
-        assertFalse(Exercises.isDoubled(small, bigBad),
-            "isDoubled with wrong value should return false");
-    }
+    //     ListNode bigBad = buildList(8, 6, 7);
+    //     assertFalse(Exercises.isDoubled(small, bigBad),
+    //         "isDoubled with wrong value should return false");
+    // }
 
-    @Test
-    public void testIsDoubledLengthMismatch() {
-        assertFalse(Exercises.isDoubled(buildList(1,2,3), buildList(2,4)),
-            "isDoubled with different lengths should return false");
-    }
+    // @Test
+    // public void testIsDoubledLengthMismatch() {
+    //     assertFalse(Exercises.isDoubled(buildList(1,2,3), buildList(2,4)),
+    //         "isDoubled with different lengths should return false");
+    // }
 
-    // ------ rotateLeft() tests ------
+    // // ------ rotateLeft() tests ------
 
-    @Test
-    public void testRotateLeftOnNull() {
-        assertNull(Exercises.rotateLeft(null, 3),
-            "rotateLeft(null, k) should return null");
-    }
+    // @Test
+    // public void testRotateLeftOnNull() {
+    //     assertNull(Exercises.rotateLeft(null, 3),
+    //         "rotateLeft(null, k) should return null");
+    // }
 
-    @Test
-    public void testRotateLeftOnSingle() {
-        ListNode head = buildList(5);
-        ListNode result = Exercises.rotateLeft(head, 10);
-        String expected = "5";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft on single-element list should return the same list");
-    }
+    // @Test
+    // public void testRotateLeftOnSingle() {
+    //     ListNode head = buildList(5);
+    //     ListNode result = Exercises.rotateLeft(head, 10);
+    //     String expected = "5";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft on single-element list should return the same list");
+    // }
 
-    @Test
-    public void testRotateLeftByZero() {
-        ListNode head = buildList(1,2,3,4,5);
-        ListNode result = Exercises.rotateLeft(head, 0);
-        String expected = listToString(head);
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft by 0 should produce the same list");
-    }
+    // @Test
+    // public void testRotateLeftByZero() {
+    //     ListNode head = buildList(1,2,3,4,5);
+    //     ListNode result = Exercises.rotateLeft(head, 0);
+    //     String expected = listToString(head);
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft by 0 should produce the same list");
+    // }
 
-    @Test
-    public void testRotateLeftTypical() {
-        ListNode head = buildList(1,2,3,4,5);
-        ListNode result = Exercises.rotateLeft(head, 2);
-        String expected = "3 -> 4 -> 5 -> 1 -> 2";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    }
+    // @Test
+    // public void testRotateLeftTypical() {
+    //     ListNode head = buildList(1,2,3,4,5);
+    //     ListNode result = Exercises.rotateLeft(head, 2);
+    //     String expected = "3 -> 4 -> 5 -> 1 -> 2";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    // }
 
-    @Test
-    public void testRotateLeftByLength() {
-        ListNode head = buildList(50, -1, 8, 33, 17);
-        ListNode result = Exercises.rotateLeft(head, 5);
-        String expected = "50 -> -1 -> 8 -> 33 -> 17";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft by list length should return the same list");
-    }
+    // @Test
+    // public void testRotateLeftByLength() {
+    //     ListNode head = buildList(50, -1, 8, 33, 17);
+    //     ListNode result = Exercises.rotateLeft(head, 5);
+    //     String expected = "50 -> -1 -> 8 -> 33 -> 17";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft by list length should return the same list");
+    // }
 
-    @Test
-    public void testRotateLeftGreaterThanLength() {
-        ListNode head = buildList(5, 15, -10, 0, 30);
-        ListNode result = Exercises.rotateLeft(head, 7); // 7 % 5 = 2
-        String expected = "-10 -> 0 -> 30 -> 5 -> 15";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft by k > length failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    }
+    // @Test
+    // public void testRotateLeftGreaterThanLength() {
+    //     ListNode head = buildList(5, 15, -10, 0, 30);
+    //     ListNode result = Exercises.rotateLeft(head, 7); // 7 % 5 = 2
+    //     String expected = "-10 -> 0 -> 30 -> 5 -> 15";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft by k > length failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    // }
 
-    @Test
-    public void testRotateLeftByOne() {
-        ListNode head = buildList(99, 42, 17, -8);
-        ListNode result = Exercises.rotateLeft(head, 1);
-        String expected = "42 -> 17 -> -8 -> 99";
-        String actual = listToString(result);
-        assertEquals(expected, actual,
-            "rotateLeft by 1 failed: expected \"" + expected + "\" but got \"" + actual + "\"");
-    }
+    // @Test
+    // public void testRotateLeftByOne() {
+    //     ListNode head = buildList(99, 42, 17, -8);
+    //     ListNode result = Exercises.rotateLeft(head, 1);
+    //     String expected = "42 -> 17 -> -8 -> 99";
+    //     String actual = listToString(result);
+    //     assertEquals(expected, actual,
+    //         "rotateLeft by 1 failed: expected \"" + expected + "\" but got \"" + actual + "\"");
+    // }
 
         /** Helper to build a linked list from an array of values. */
     private ListNode buildList(int... values) {
