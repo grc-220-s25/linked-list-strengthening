@@ -1,5 +1,6 @@
 public class Exercises {
 
+
     /**
      * Returns a count of how many nodes are in the linked list.
      * 
@@ -38,62 +39,64 @@ public class Exercises {
      */
     public static ListNode prepend(ListNode head, int toAdd) {
         ListNode toBeAdded = new ListNode(toAdd);
-        curr.next = head; 
-        
+        toBeAdded.next = head;
         return toBeAdded;
     }
 
-    // /**
-    //  * Removes the last element in the linked list and returns the head.
-    //  * 
-    //  * If head is null or the only element in the list, returns null.
-    //  * 
-    //  * Example:
-    //  * Input: 6 -> 4 -> 9 -> 2
-    //  * Output: 6 -> 4 -> 9
-    //  *  
-    //  * @param head the head of the linked list
-    //  * @return the head of the list with the last element removed
-    //  */
-    // public static ListNode removeLast(ListNode head) {
-    //     return null;
-    // }
+    /**
+     * Removes the last element in the linked list and returns the head.
+     * 
+     * If head is null or the only element in the list, returns null.
+     * 
+     * Example:
+     * Input: 6 -> 4 -> 9 -> 2
+     * Output: 6 -> 4 -> 9
+     *  
+     * @param head the head of the linked list
+     * @return the head of the list with the last element removed
+     */
+    public static ListNode removeLast(ListNode head) {
 
-    // /**
-    //  * Returns the minimum value in the linked list, or Integer.MAX_VALUE if
-    //  * head is null.
-    //  * 
-    //  * Example:
-    //  * Input: 3 -> -4 -> 9 -> 2
-    //  * Output: -4
-    //  * 
-    //  * @param head the head of the linked list
-    //  * @return the minimum value in the list 
-    //  */
-    // public static int min(ListNode head) {
-    //     return -1;
-    // }
+    }
 
-    // /**
-    //  * Removes the first instance of the node with the minimum value from the
-    //  * list and returns the head. If head is null or the only element in the list,
-    //  * returns null.
-    //  * 
-    //  * Examples:
-    //  * Input: 3 -> 9 -> 0 -> -1 -> 5
-    //  * Output: 3 -> 9 -> 0 -> 5
-    //  * 
-    //  * Input: 2 -> 4 -> 2 -> 9
-    //  * Output: 4 -> 2 -> 9
-    //  * 
-    //  * HINT: use min as a helper method
-    //  * 
-    //  * @param head the head of the linked list
-    //  * @return the head of the list with the first instance of the minimum value removed
-    //  */
-    // public static ListNode removeMin(ListNode head) {
-    //     return null;
-    // }
+
+
+    /**
+     * Returns the minimum value in the linked list, or Integer.MAX_VALUE if
+     * head is null.
+     * 
+     * Example:
+     * Input: 3 -> -4 -> 9 -> 2
+     * Output: -4
+     * 
+     * @param head the head of the linked list
+     * @return the minimum value in the list 
+     */
+    public static int min(ListNode head) {
+
+        }
+        
+
+    /**
+     * Removes the first instance of the node with the minimum value from the
+     * list and returns the head. If head is null or the only element in the list,
+     * returns null.
+     * 
+     * Examples:
+     * Input: 3 -> 9 -> 0 -> -1 -> 5
+     * Output: 3 -> 9 -> 0 -> 5
+     * 
+     * Input: 2 -> 4 -> 2 -> 9
+     * Output: 4 -> 2 -> 9
+     * 
+     * HINT: use min as a helper method
+     * 
+     * @param head the head of the linked list
+     * @return the head of the list with the first instance of the minimum value removed
+     */
+    public static ListNode removeMin(ListNode head) {
+
+    }
 
     // /* ------ OPTIONAL CHALLENGE PROBLEMS ------ */
 
@@ -138,4 +141,5 @@ public class Exercises {
     // public static ListNode rotateLeft(ListNode head, int k) {
     //     return null;
     // }
-}
+    }
+
